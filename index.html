@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!--
+This HTML document serves as the structure for a Shape Collision Game developed with Phaser 3.
+It includes styles for layout adjustments, a game container for Phaser's canvas, and an achievements list.
+The document also loads Phaser 3 and the game's JavaScript modules, which define the game scene, levels, and shapes.
+-->
+
+<html>
+<head>
+    <title>Cursor-Combat</title>
+    <style>
+        /* Styles to center the game and achievements list, ensuring a consistent and focused game experience. */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #gameContainer {
+            width: 800px; /* Game width. Adjust if different dimensions are required. */
+        }
+        #achievements {
+            margin-top: 20px;
+            text-align: center;
+            width: 800px; /* Match the game container width for alignment. */
+        }
+    </style>
+</head>
+<body>
+    <!-- Game container where Phaser will render the game canvas. -->
+    <div id="gameContainer"></div> 
+    
+    <!-- Achievements list to display game achievements and their statuses. -->
+    <div id="achievements">
+        <h2>Achievements</h2>
+        <ul id="achievementsList">
+            <li id="Max-0">Toddler's Triumph: Obtain the max score in every level on easy</li>
+            <li id="Max-1">Mild Magician: Obtain the max score in every level on medium</li>
+            <li id="Max-2">Hardcore Conjurer: Obtain the max score in every level on hard</li>
+            <li id="Max-3">Insane Incantator: Obtain the max score in every level on insane</li>
+			<li id="Win-0">Novice Navigator: Beat the game on easy</li>
+            <li id="Win-1">Seasoned Scroller: Beat the game on medium</li>
+            <li id="Win-2">Expert Executor: Beat the game on hard</li>
+            <li id="Win-3">Master of Cursors: Beat the game on insane</li>
+            <li id="Friendly-Fire">Friendly-Fire: Kill all squares and architecture in a stage they exist</li>
+            <li id="Destructive">Destructive: Kill everything in a stage where there are squares, triangles, and architecture</li>
+        </ul>
+    </div>
+    
+    <!-- Phaser library and game scripts. -->
+    <script src="phaser.js"></script>
+    <script type="module" src="game.js"></script>
+    <script type="module" src="GameScene.js"></script>
+    <script type="module" src="level.js"></script>
+    <script type="module" src="levels.js"></script>
+    <script src="shape.js"></script>
+    <script src="triangle.js"></script>
+    <script src="square.js"></script>
+    <script src="architecture.js"></script>
+    <script src="area.js"></script>
+    <script src="healthbar.js"></script>
+    <script src="armored_triangle.js"></script>
+    <script src="stealth_triangle.js"></script>
+	
+    <script src="upgrade.js"></script>
+    <script src="clearfriendlies.js"></script>
+    <script src="intangible.js"></script>
+    <script src="slowtime.js"></script>
+	
+    <script src="escmenu.js"></script>
+    <script src="main_menu.js"></script>
+    <script src="levelselect.js"></script>
+    <script src="instructions.js"></script>
+</body>
+</html>
