@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: architecture.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: architecture.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Architecture Class
+ * Extends the Shape class to implement complex polygonal structures within the game.
+ *
+ * Description:
+ * This class is designed to create and manage architectural elements in the game environment,
+ * allowing for the representation of complex shapes beyond simple geometric figures.
+ * It takes a series of points defining the vertices of a polygon and a vertical velocity,
+ * drawing the shape in the Phaser scene and making it interactive.
+ *
+ * Expected Inputs:
+ * - scene: The Phaser scene where the architecture will be drawn.
+ * - points: An array of points {x, y} defining the vertices of the polygon.
+ * - velocityY: The vertical velocity at which the architecture moves.
+ *
+ * Expected Outputs:
+ * - An interactive polygonal shape rendered in the Phaser scene, capable of moving at the specified velocity.
+ *
+ * Functions:
+ * - constructor(scene, points, velocityY): Initializes the architectural shape with the given parameters.
+ * - createGraphics(): Sets up the graphical representation of the architecture.
+ * - draw(): Draws the polygonal shape on the scene based on the vertices provided.
+ *
+ * Called by:
+ * This class is instantiated by the Level class when loading levels that include architectural elements as part of their design.
+ *
+ * Will call:
+ * - Phaser's graphics and geometry systems to create and manage the polygonal shape's graphical representation.
+ * @class
+ * @author Braeden Ruff
+ */
+
+class Architecture extends Shape 
+{
+	/**
+	 * The constructor for the Architecture class
+	 * @constructor
+	 * @param {Phaser.Scene} scene - The current Phaser scene instance.
+	 * @param {Array.&lt;{x: number, y: number}>} points - An array of points defining the architecture polygon  
+	 * @param {number} velocityY - Initial vertical velocity.
+	 */
+    constructor(scene, points, velocityY) 
+	{
+        // Adjust points to be relative to the lowest y-value to normalize position.
+        const minY = Math.min(...points.map(p => p.y));
+        super(scene, 0, minY, 0, velocityY, 0); // Initialize the shape with the adjusted position.
+        this.points = points.map(p => new Phaser.Geom.Point(p.x, p.y - minY)); // Normalize points.
+    }
+    
+    /**
+     * Prepares the graphics object for the architecture and draws its initial state.
+     */
+    createGraphics() {
+        this.graphics = this.scene.add.graphics({ x: this.x, y: this.y });
+		
+		let geom = new Phaser.Geom.Polygon(this.points);
+		this.graphics.geom = geom;
+		
+        this.draw(); // Draw the architecture based on the points provided.
+        
+        // Make the polygon interactive, allowing for event handling.
+        this.graphics.setInteractive(geom, Phaser.Geom.Polygon.Contains);
+		this.graphics.setDepth(2);
+    }
+
+    /**
+     * Draws the polygonal shape on the scene.
+     */
+    draw() {
+        // Set the color and style for the architecture.
+        this.graphics.fillStyle(0x777777, 1); // A neutral grey color.
+        this.graphics.lineStyle(0, 0x000000); // Black border.
+
+        // Begin the path for the polygon shape.
+        this.graphics.beginPath();
+        if(this.points.length > 0) {
+            // Move to the first point.
+            this.graphics.moveTo(this.points[0].x, this.points[0].y);
+        }
+        // Draw lines to each subsequent point.
+        for(let i = 1; i &lt; this.points.length; ++i) {
+            this.graphics.lineTo(this.points[i].x, this.points[i].y);
+        }
+        
+        // Close the path and fill the shape with the defined color.
+        this.graphics.closePath();
+        this.graphics.fillPath();
+        this.graphics.strokePath();
+    }
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Architecture.html">Architecture</a></li><li><a href="Area.html">Area</a></li><li><a href="ArmoredTriangle.html">ArmoredTriangle</a></li><li><a href="ClearFriendlies.html">ClearFriendlies</a></li><li><a href="EscapeMenu.html">EscapeMenu</a></li><li><a href="GameScene.html">GameScene</a></li><li><a href="HealthBar.html">HealthBar</a></li><li><a href="Instructions.html">Instructions</a></li><li><a href="Intangible.html">Intangible</a></li><li><a href="Level.html">Level</a></li><li><a href="LevelSelect.html">LevelSelect</a></li><li><a href="MainMenu.html">MainMenu</a></li><li><a href="Shape.html">Shape</a></li><li><a href="SlowTime.html">SlowTime</a></li><li><a href="Square.html">Square</a></li><li><a href="StealthTriangle.html">StealthTriangle</a></li><li><a href="Triangle.html">Triangle</a></li><li><a href="Upgrade.html">Upgrade</a></li></ul><h3>Global</h3><ul><li><a href="global.html#level1">level1</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Wed Mar 20 2024 01:23:43 GMT-0300 (Atlantic Daylight Saving Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
