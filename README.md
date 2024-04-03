@@ -8,26 +8,33 @@ Avoid your fellow square citizens and your architecture, and kill by mousing ove
 
 Shape types:
 Squares -> Friendly citizen. Don’t touch them with your deadly magic!
+
 ![image](https://github.com/BraedenRuff/CursorCombat/assets/45854390/aeee904c-77f0-4bb6-9c1b-aeb051f08e86)
 
 Triangles -> These are the most common of the savages. Mouse over to your hearts content!
+
 ![image](https://github.com/BraedenRuff/CursorCombat/assets/45854390/70c75a09-f9fc-46fb-9d26-4378ca314760)
 
 Stealth triangles -> These sneaky triangles are incognito, don’t let them get away!
+
 ![image](https://github.com/BraedenRuff/CursorCombat/assets/45854390/1f602308-ec33-4cbf-94ce-bfdff7e4f340)
 
 Architecture -> You can’t destroy that, we live there!
+
 ![image](https://github.com/BraedenRuff/CursorCombat/assets/45854390/33a60bf6-4ea2-48ad-909a-1658f5c97476)
 
 Area -> this is a recharge station. Come here before that bar on the bottom left of your screen runs out
 or you’ll break down and we’re gonna have to do that whole ritual thing all over again.
+
 ![image](https://github.com/BraedenRuff/CursorCombat/assets/45854390/b6ac62b1-20c5-4cb9-8e60-6cd6017bcf75)
 
 Armored Triangles -> These buggers are bit more sturdy. We might need to fry these with cursor
 overdrive. Click them to vanquish these foes.
+
 ![image](https://github.com/BraedenRuff/CursorCombat/assets/45854390/c5c055d2-ab12-4641-889a-3a81a04a8b60)
 
 Upgrades -> These aren’t strictly necessary to get, but they’ll help you defeat these menaces.
+
 ![image](https://github.com/BraedenRuff/CursorCombat/assets/45854390/b13489c5-73a8-4c29-8526-f09194ad173b)
 
 The upgrade with the bomb (left) clears the screen of all square citizens and architecture, allowing you
