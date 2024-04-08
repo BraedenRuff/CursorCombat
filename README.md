@@ -1,4 +1,4 @@
-<h1>To launch this game, go to BraedenRuff.github.io/CursorCombat</h1>
+<h1>To play this game, go <a href='BraedenRuff.github.io/CursorCombat'>here</a></h1>
 
 In the digital realm of Cubeville, a longstanding war is ongoing as the Triangles, continue their relentless
 assault. Triangles are aggressive savages, as one would expect without dignified corners, and they are
