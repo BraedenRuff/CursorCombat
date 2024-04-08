@@ -1,3 +1,5 @@
+<h1>To launch this game, go to BraedenRuff.github.io/CursorCombat</h1>
+
 In the digital realm of Cubeville, a longstanding war is ongoing as the Triangles, continue their relentless
 assault. Triangles are aggressive savages, as one would expect without dignified corners, and they are
 bent on trying to expand their cult. The Square Council, in a desperate bid to save their citizens and
@@ -65,5 +67,3 @@ Expert Executor: Beat the game on hard
 Master of Cursors: Beat the game on insane
 Friendly-Fire: Kill all squares and architecture in a stage they exist
 Destructive: Kill everything in a stage where there are squares, triangles, and architecture
-
-To launch this game, go to BraedenRuff.github.io/CursorCombat
